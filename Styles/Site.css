@@ -1,0 +1,173 @@
+/* Site.css */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+/**
+ * Slogan section
+ */ 
+.slogan-bar {
+    padding: 0px 20px;
+    margin: 0px;
+    background-color: #000;
+}
+
+.slogan-text {
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: -0.15rem;
+    color: #ccc;
+}
+
+.slogan-image {
+    margin: 0px auto;
+
+    border-radius: 50%;
+}
+
+#cannon-logo {
+    /* TODO replace this? */
+    background: url(http://skulepedia.ca/w/images/thumb/2/29/1T3_Cannon_Square.jpg/300px-1T3_Cannon_Square.jpg);
+    background-size: cover;
+    
+    /* Change these to the size of whatever image is used. */
+    width: 15vmin;
+    height: 15vmin;
+
+    min-width:100px;
+    min-height:100px;
+}
+
+
+/**
+ * Navbar
+ */
+.navbar {
+    margin-top: 15px;
+}
+
+.navbar > .buffer {
+
+    margin: 0px auto;
+
+    display: table;
+
+    background-color: #eee;
+
+    border-radius: 10px;
+
+    max-width: 100vw;
+
+}
+
+.navbar-item:last-child {
+    border-right: none !important;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.navbar-item:first-child {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.navbar-item {
+
+    border-right: 1px solid #ddd;
+
+    display:inline-block;
+    text-align: center;
+    padding: 15px 20px;
+    max-width: 30rem;
+
+    transition: box-shadow 0.15s;
+}
+
+.clickable {
+    transition: box-shadow 0.15s;
+}
+
+.navbar-item:hover, .clickable:hover {
+    box-shadow: 0px 2px 3px 1px rgba(0,0,0,0.3);
+}
+
+
+/** 
+ * Links
+ */
+.link, .clickable {
+    user-select: none;
+    cursor: pointer;
+}
+
+
+/**
+ * Photo slideshow
+ */
+#photo-slideshow {
+    max-width: 75vw;
+    max-height: 500px;
+}
+
+#photo-slideshow > img {
+    max-width: inherit;
+    max-height: inherit;
+}
+
+.slideshow-button {
+    background-color: #eee;
+    /* Vertical center button text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size:1.5vmax;
+    padding: 0px 2px;
+}
+
+.slideshow-button#left {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.slideshow-button#right {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.slideshow-buffer {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;    
+}
+
+slideshow {
+    margin: 20px auto;
+    display: table;
+}
+.slideshow-button-text {
+    min-width: 15px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/**
+ * Welcome blurbs
+ */
+#welcome-message {
+    max-width: 700px;
+    margin: 0px auto;
+    font-size: 1.5rem;
+    padding-bottom: 40px;
+}
+
+.thicc {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: -0.18rem;
+    color: #d00;
+}
