@@ -1,0 +1,1 @@
+DEBUG=cwp:* npm start
