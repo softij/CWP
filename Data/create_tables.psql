@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS FeedbackResponses (
+    receivedTime TIMESTAMP WITH TIME ZONE NOT NULL,
+    feedbackText TEXT NOT NULL,
+    contact TEXT
+);
