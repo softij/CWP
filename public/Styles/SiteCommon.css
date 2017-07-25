@@ -1,9 +1,10 @@
 /* Site.css */
 
-body {
+html, body {
     font-family: 'Open Sans', sans-serif;
     padding: 0px;
     margin: 0px;
+    height: 100%;
 }
 
 /**
