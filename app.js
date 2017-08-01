@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var history = require('./routes/history');
 var feedback = require('./routes/feedback');
 var feedbackResponses = require('./routes/feedback_responses');
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/feedback', feedback);
+app.use('/history', history);
 if (process.env.DEBUG) {
   app.use('/feedback_responses', feedbackResponses);
 }
