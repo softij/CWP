@@ -1,5 +1,30 @@
 /* History.css */
 
-figure.left {
-    float: left;
+#book-center-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+#history-flipbook > *  {
+    background-color: #eee;
+}
+
+#front-cover-outside {
+    background-color: #493722;
+}
+
+#front-cover-inside {
+    background-color: #7a5c39;
+}
+
+#back-cover-inside {
+    background-color: #7a5c39;
+}
+
+#back-cover-outside {
+    background-color: #493722;
 }
