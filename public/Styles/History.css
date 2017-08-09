@@ -1,30 +1,9 @@
 /* History.css */
 
-#book-center-wrapper {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    padding: 0;
-    margin: 0;
-}
-
-#history-flipbook > *  {
-    background-color: #eee;
-}
-
-#front-cover-outside {
-    background-color: #493722;
-}
-
-#front-cover-inside {
-    background-color: #7a5c39;
-}
-
-#back-cover-inside {
-    background-color: #7a5c39;
-}
-
-#back-cover-outside {
-    background-color: #493722;
+#history-book {
+    width: 100%;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
 }

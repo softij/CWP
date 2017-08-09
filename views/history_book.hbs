@@ -1,0 +1,66 @@
+<html>
+<link href="/Scripts/wowbook/wow_book.css" rel="stylesheet" />
+<head></head>
+<body style="background-color: brown; margin-top: -47px; overflow: hidden">
+    <div id="book2" style="transform: scale(0.6); top: -200px;"></div>
+
+    <script src="/Scripts/wowbook/jquery.js"></script>
+    <script src="/Scripts/wowbook/bootstrap.min.js"></script>
+    <script src="/Scripts/wowbook/jquery.easing.min.js"></script>
+    <script src="/Scripts/wowbook/jquery.fittext.js"></script>
+    <script src="/Scripts/wowbook/wow.min.js"></script>
+    <script src="/Scripts/wowbook/creative.js"></script>
+    <script src="/Scripts/wowbook/pdf.combined.min.js"></script>
+    <script src="/Scripts/wowbook/wow_book.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            function fullscreenErrorHandler(){
+                if (self!=top) return "The frame is blocking full screen mode. Click on 'remove frame' button above and try to go full screen again."
+            }
+
+            var optionsBook2 = {
+                height   : 1056
+                ,width    : 816*2
+                ,turnPageDuration: 350
+                ,flipSound: false
+                ,pageNumbers: false
+
+                ,pdf: "/History.pdf"
+                ,pdfFind: true
+                ,pdfTextSelectable: true
+
+                ,centeredWhenClosed : true
+                ,hardcovers : true
+                ,bookShadow: false
+                ,curl: false
+                ,toolbar: "lastLeft, left, currentPage, right, lastRight, find, toc, zoomin, zoomout, download, thumbnails"
+                ,thumbnailsPosition : 'bottom'
+                ,responsiveHandleWidth : 50
+                ,onFullscreenError: fullscreenErrorHandler
+            };
+
+            var books = {
+                "#book2" : optionsBook2,
+            };
+
+            function buildBook( elem ){
+                var book=$.wowBook(elem);
+                if (!book) {
+                    $(elem).wowBook( books[elem] );
+                    book=$.wowBook(elem);
+                }
+                $(".wowbook-toolbar").css({
+                    position: "fixed",
+                    bottom: 0,
+                    left: 0,
+                    right: 0
+                });
+                $(".wowbook-book-shadow").hide();
+                book.showLightbox();
+            }
+
+            buildBook("#book2");
+        });
+    </script>
+</body>
