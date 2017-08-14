@@ -1,3 +1,7 @@
+@font-face {
+    font-family: LucidaBlackletter;
+    src: url(Aro.ttf);
+}
 /* Site.css */
 
 html, body {
@@ -11,27 +15,48 @@ html, body {
  * Slogan section
  */ 
 .slogan-bar {
-    padding: 0px 20px;
+    position: relative;
+    padding: 5px 20px;
     margin: 0px;
     background-color: #000;
 }
 
 .slogan-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10%;
+    height: 100%;
     text-align: center;
-    font-size: 3rem;
     letter-spacing: -0.15rem;
     color: #ccc;
 }
 
-.slogan-image {
-    margin: 0px auto;
+.large-slogan-text {
+    margin-top: 0;
+    margin-bottom: 1.5ch;
+    word-spacing: 0.1ch;
+    font-family: LucidaBlackletter;
+    font-weight: lighter;
+    font-size: 2.5rem;
+}
 
+.small-slogan-subtext {
+    margin-top: 0;
+    word-spacing: 0.5ch;
+    opacity: 0.9;
+    font-family: Georgia;
+    font-size: 1.5rem;
+}
+
+.slogan-image {
+    margin: 0 auto;
     border-radius: 50%;
+    opacity: 0.35;
 }
 
 #cannon-logo {
-    /* TODO replace this? */
-    background: url(http://skulepedia.ca/w/images/thumb/2/29/1T3_Cannon_Square.jpg/300px-1T3_Cannon_Square.jpg);
+    background: url(/Images/cannonlogo.tif);
     background-size: cover;
     
     /* Change these to the size of whatever image is used. */
