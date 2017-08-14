@@ -14,27 +14,25 @@ html, body {
 /**
  * Slogan section
  */ 
-.slogan-bar {
+.header {
+    display: block;
+    z-index: -1;
     position: relative;
-    padding: 5px 20px;
-    margin: 0px;
-    background-color: #000;
+    background-color: black;
 }
 
 .slogan-text {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 10%;
     height: 100%;
     text-align: center;
     letter-spacing: -0.15rem;
     color: #ccc;
+    z-index: 2;
+    padding: 5px;
 }
 
 .large-slogan-text {
-    margin-top: 0;
-    margin-bottom: 1.5ch;
+    margin-top: 1ch;
+    margin-bottom: 3ch;
     word-spacing: 0.1ch;
     font-family: LucidaBlackletter;
     font-weight: lighter;
@@ -57,14 +55,13 @@ html, body {
 
 #cannon-logo {
     background: url(/Images/cannonlogo.bmp);
-    background-size: cover;
-    
-    /* Change these to the size of whatever image is used. */
-    width: 15vmin;
-    height: 15vmin;
-
-    min-width:100px;
-    min-height:100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 
