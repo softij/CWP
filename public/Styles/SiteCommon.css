@@ -56,7 +56,7 @@ html, body {
 }
 
 #cannon-logo {
-    background: url(/Images/cannonlogo.tif);
+    background: url(/Images/cannonlogo.bmp);
     background-size: cover;
     
     /* Change these to the size of whatever image is used. */
