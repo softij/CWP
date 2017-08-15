@@ -1,28 +1,39 @@
 /* Feedback.css */
 
 #feedback-buffer {
-    max-width: 90vw;
-    min-width: 50vw;
-    margin: 0px auto;
+    max-width: 70ch;
+    width: 90%;
+    margin: 3ch auto;
 }
 
-#feedback-section {
+.feedback-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
 }
 
-#feedback-content {
-    max-height: 50vh;
-    max-width:100%;
-    width: 50%;
-    display: inline-block;
-    min-height: 200px;
+.feedback-section > label {
+    margin-top: 0.75ch;
+    margin-bottom: 0.2ch;
+}
+
+.feedback-section > label em {
+    font-size: small;
+    opacity: 0.7;
+}
+
+.feedback-section > input[type="text"],
+.feedback-section > textarea {
+    line-height: 1.5rem;
+}
+
+textarea {
+    min-height: 12rem;
 }
 
 #submit-button {
     padding: 10px;
-    max-width: 100px;
+    margin-top: 1ch;
     text-align: center;
-    display:inline-block;
+    align-self: center;
 }
