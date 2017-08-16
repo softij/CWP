@@ -3,7 +3,7 @@ const Router = require('express-promise-router');
 const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 const sg_helper = require('sendgrid').mail;
 const from_email = new sg_helper.Email('feedback@smokeandthunder.ca');
-const to_email = new sg_helper.Email('connorjsmith101@gmail.com');
+const to_email = new sg_helper.Email('chief.attiliator@gmail.com');
 
 const feedback_db = require('../data/feedback');
 const router = new Router();
