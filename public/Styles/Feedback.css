@@ -18,6 +18,8 @@
 }
 
 .feedback-section > .fullwidth {
+    font-size: 14px;
+    line-height: normal !important;
     position: relative;
     padding: 10px;
     width: 90%;
