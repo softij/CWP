@@ -13,6 +13,29 @@
 }
 
 .feedback-section > label {
+    margin: 20ch auto 0px auto;
+    text-align: center;
+}
+
+.feedback-section > .fullwidth {
+    position: relative;
+    padding: 10px;
+    width: 90%;
+    margin: 0px auto;
+    max-width: 100vw;
+    border-radius: 0px;
+    transition: background-color 0.2s, box-shadow 0.4s;
+    border: 1px solid rgba(0,0,0,0.2) !important;
+    box-shadow: 0px  0px 0px 0px rgba(0,0,0,1);
+    border-radius: 10px;
+}
+
+.feedback-section > .fullwidth:focus {
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.44);
+    outline: none;
+}
+
+.feedback-section > label {
     margin-top: 0.75ch;
     margin-bottom: 0.2ch;
 }
@@ -32,8 +55,29 @@ textarea {
 }
 
 #submit-button {
-    padding: 10px;
-    margin-top: 1ch;
+    padding: 15px 20px;
+    margin: 2ch auto;
     text-align: center;
     align-self: center;
+    background: #eee;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+    transition: box-shadow 0.2s;
+}
+
+#submit-button:hover {
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.44);
+}
+
+.feedback-section > input[type=email].uninitialized {
+    color: #888;
+}
+
+.feedback-section > input[type=email] {
+    font-family: monospace;
+}
+
+.feedback-section > textarea[name=feedbackText] {
+    font-family: sans-serif;
 }
