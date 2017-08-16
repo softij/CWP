@@ -72,14 +72,11 @@ textarea {
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.44);
 }
 
-.feedback-section > input[type=email].uninitialized {
-    color: #888;
-}
-
 .feedback-section > input[type=email] {
     font-family: monospace;
 }
 
-.feedback-section > textarea[name=feedbackText] {
+.feedback-section > textarea[name=feedbackText]
+.feedback-section > input[name=contactName] {
     font-family: sans-serif;
 }
