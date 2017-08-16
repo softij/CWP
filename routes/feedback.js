@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
 router.post('/', async function(req, res) {
   feedback_db.AddFeedback(
     req.body.feedbackText,
-    req.body.contact
+    req.body.contactEmail,
+    req.body.contactName
   );
   res.render('feedback', {title:"Cannon Feedback"});
 });

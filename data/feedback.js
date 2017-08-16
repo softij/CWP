@@ -6,10 +6,10 @@ var connInfo = {
 
 const pool = new Pool(connInfo);
 
-function AddFeedback(feedbackText, contact) {
+function AddFeedback(feedbackText, contactEmail, contactName) {
   return pool.query(
-    'INSERT INTO FeedbackResponses (receivedTime, feedbackText, contact) VALUES (CURRENT_TIMESTAMP, $1, $2)',
-    [feedbackText, contact]
+    'INSERT INTO FeedbackResponses (receivedTime, feedbackText, contactEmail, contactName) VALUES (CURRENT_TIMESTAMP, $1, $2, $3)',
+    [feedbackText, contactEmail, contactName]
   );
 }
 

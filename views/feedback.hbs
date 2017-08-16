@@ -1,19 +1,17 @@
 <link rel="stylesheet" href="./Styles/Feedback.css"/>
 <div id="feedback-buffer">
     <form class="feedback-section" method="post">
-        <label for="name">
+        <label for="contactName">
             Name (optional) <br>
         </label>
-        <input class="fullwidth" type="text" name="name">
-        <label for="contact"> 
+        <input class="fullwidth" type="text" name="contactName" placeholder="Jane Doe">
+        <label for="contactEmail"> 
             Email (optional) <br> 
             <em>Chief Attiliator will reach out with a response if information is provided.</em>
         </label>
-        <input class="fullwidth uninitialized" type="email" name="contact" value="example@skule.ca"/>
+        <input class="fullwidth" type="email" name="contactEmail" placeholder="example@skule.ca"/>
         <label for="feedbackText"> Message </label>
         <textarea class="fullwidth" type="text" name="feedbackText"></textarea>
         <input id="submit-button" type="submit" value="Send" />
     </form>
 </div>
-
-<script src="./Scripts/Feedback.js"></script>
