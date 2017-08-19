@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var history = require('./routes/history');
 var feedback = require('./routes/feedback');
+var faq = require('./routes/faq');
 var feedbackResponses = require('./routes/feedback_responses');
 
 var app = express();
@@ -30,6 +31,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/feedback', feedback);
 app.use('/history', history);
+app.use('/faq', faq);
 if (process.env.DEBUG) {
   app.use('/feedback_responses', feedbackResponses);
 }
