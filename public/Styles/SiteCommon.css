@@ -1,7 +1,18 @@
 @font-face {
     font-family: LucidaBlackletter;
-    src: url(Aro.ttf);
+    src: url(Lucida-Blackletter.ttf);
 }
+
+@font-face {
+    font-family: Georgia;
+    src: url(Georgia.ttf);
+}
+
+@font-face {
+    font-family: AppleChancery;
+    src: url(Apple-Chancery.ttf);
+}
+
 /* Site.css */
 
 html, body {
@@ -188,12 +199,6 @@ slideshow {
 .center-column > * {
     max-width: 900px;
     width: 90%;
-}
-
-.center-column > p,
-.center-column > h2,
-.center-column > ul {
-    margin-top: 0;
 }
 
 .page-heading {
