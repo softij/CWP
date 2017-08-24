@@ -6,9 +6,11 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
     <link rel="stylesheet" href="./Styles/SiteCommon.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Merienda+One" rel="stylesheet">
+    <script src="./Scripts/Links.js"></script>
   </head>
   <body>
-    <a class="header" style="text-decoration: none" href="/">
+    <a class="header" href="../">
         <div class="slogan-image" id="cannon-logo"></div>
         <div class="slogan-text">
             <h1 class="large-slogan-text"> Ye Olde Mighty Skule Cannon</h1>
@@ -17,6 +19,7 @@
     </a>
     <div class="navbar">
         <div class="buffer">
+        <div class="navbar-item link" data-link="../">Home</div>
 	    <div class="navbar-item link" data-link="./history">History</div>       
 	    <div class="navbar-item link" data-link="./faq">
 	        FAQ
@@ -29,6 +32,8 @@
 	    </div>            
         </div>
     </div>
-    {{{body}}}
+    <div class="layout-body-content">
+        {{{body}}}
+    </div>
   </body>
 </html>

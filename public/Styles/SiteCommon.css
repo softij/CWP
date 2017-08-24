@@ -16,9 +16,16 @@ html, body {
  */ 
 .header {
     display: block;
-    z-index: -1;
     position: relative;
     background-color: black;
+    text-decoration: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.parallel {
+    columns: 400px 2;
+    margin: 10px 30px;
 }
 
 .slogan-text {
@@ -32,11 +39,10 @@ html, body {
 
 .large-slogan-text {
     margin-top: 1ch;
-    margin-bottom: 3ch;
     word-spacing: 0.1ch;
     font-family: LucidaBlackletter;
     font-weight: lighter;
-    font-size: 2.5rem;
+    font-size: 3.6rem;
 }
 
 .small-slogan-subtext {
@@ -59,18 +65,20 @@ html, body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    z-index: -1;
     height: 100%;
     width: 100%;
     position: absolute;
 }
 
+body, .layout-body-content {
+    background-color: #111;
+}
 
 /**
  * Navbar
  */
 .navbar {
-    margin-top: 15px;
+    /*margin-top: 15px;*/
 }
 
 .navbar > .buffer {
@@ -79,9 +87,11 @@ html, body {
 
     display: table;
 
-    background-color: #eee;
+    background-color: #000;
 
-    border-radius: 10px;
+    color: #b9b9b9;
+
+    border-radius: 1px 1px 10px 10px;
 
     max-width: 100vw;
 
@@ -98,18 +108,23 @@ html, body {
 
 .navbar-item {
 
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #3a3a3a;
+
 
     display:inline-block;
     text-align: center;
     padding: 15px 20px;
     max-width: 30rem;
 
-    transition: box-shadow 0.15s;
+    transition: box-shadow 0.15s, background-color 0.15s;
 }
 
 .clickable {
     transition: box-shadow 0.15s;
+}
+
+.navbar-item:hover {
+    background-color: #393939;
 }
 
 .navbar-item:hover, .clickable:hover {
@@ -140,12 +155,12 @@ html, body {
 }
 
 .slideshow-button {
-    background-color: #eee;
+    background-color: rgba(0,0,0,0);
     /* Vertical center button text */
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    color: #887575;
     font-size:1.5vmax;
     padding: 0px 2px;
 }
@@ -196,11 +211,25 @@ slideshow {
     margin-top: 0;
 }
 
+.tabbed {
+    padding-left: 2rem;
+}
+
 .page-heading {
     max-width: 900px;
-    margin: 0px auto;
+    margin: 5px auto;
+    color: #ddd;
     font-size: 1.5rem;
     padding-bottom: 40px;
+    padding-left: 10px;
+    padding-right:10px;
+    font-family: 'Merienda One', 'Open Sans', sans-serif;
+}
+
+.page-heading > .thicc {
+    font-family: Arial;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 figure.right {
@@ -245,6 +274,6 @@ figcaption {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 400;
-    letter-spacing: -0.18rem;
+    letter-spacing: -0.10rem;
     color: #d00;
 }
