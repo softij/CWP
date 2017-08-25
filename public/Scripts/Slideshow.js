@@ -8,7 +8,7 @@ const IMAGE_URLS = [
         'https://photos.smugmug.com/1T61T7/Godiva-Week/Godivas-Resurection-/i-BfNcZms/0/60022f5d/X2/IMG_0013-X2.jpg'
 ];
 
-$(() => {
+(function() {
 
     var slideshowDiv = $('#photo-slideshow')[0];
 
@@ -33,7 +33,7 @@ $(() => {
         var maxIndex = $('#photo-slideshow').children().last()
                 .data('slideshow-index');
 
-        return (direction) => {
+        return function (direction) {
 
             if (direction === "left" && index > 0) {
 
@@ -64,14 +64,14 @@ $(() => {
     })();
 
     // Create click listeners
-    $('.slideshow-button#left').click(() => {scroll('left')});
-    $('.slideshow-button#right').click(() => {scroll('right')});
+    $('.slideshow-button#left').click(function(){scroll('left')});
+    $('.slideshow-button#right').click(function(){scroll('right')});
 
 
     // View first slide.
     $('#photo-slideshow').children().first().removeClass('hidden');
 
-});
+})();
 
 function CreateSlide (index, url) {
     return '<img src="'+  url + '" data-slideshow-index="' + index + 
