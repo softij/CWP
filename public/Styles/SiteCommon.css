@@ -1,18 +1,7 @@
 @font-face {
     font-family: LucidaBlackletter;
-    src: url(Lucida-Blackletter.ttf);
+    src: url(Aro.ttf);
 }
-
-@font-face {
-    font-family: Georgia;
-    src: url(Georgia.ttf);
-}
-
-@font-face {
-    font-family: AppleChancery;
-    src: url(Apple-Chancery.ttf);
-}
-
 /* Site.css */
 
 html, body {
