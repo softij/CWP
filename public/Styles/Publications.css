@@ -1,0 +1,22 @@
+#PublicationContent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 20px auto;
+    justify-content: space-around;
+}
+
+#PublicationContent > a {
+    display: block;
+    flex: 0 0 auto;
+}
+
+#PublicationContent > a > img {
+    margin: 10px;
+    transition: filter 0.2s;
+    filter: blur(2px);
+}
+
+#PublicationContent > a > img:hover {
+    filter: blur(0px);
+}
