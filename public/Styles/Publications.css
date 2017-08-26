@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin: 20px auto;
+    margin: 20px 5vw;
     justify-content: space-around;
 }
 
@@ -11,12 +11,19 @@
     flex: 0 0 auto;
 }
 
-#PublicationContent > a > img {
+#PublicationContent > a > .publication-img {
     margin: 10px;
     transition: filter 0.2s;
     filter: blur(2px);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 30vmin;
+    height: 30vmin;
+    min-height: 300px;
+    min-width: 300px;
 }
 
-#PublicationContent > a > img:hover {
+#PublicationContent > a > .publication-img:hover {
     filter: blur(0px);
 }
