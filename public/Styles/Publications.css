@@ -27,3 +27,10 @@
 #PublicationContent > a > .publication-img:hover {
     filter: blur(0px);
 }
+
+@media (max-width: 725px) {
+    #PublicationContent > a > .publication-img {
+        width: 70vmin;
+        height: 70vmin;
+    }
+}
