@@ -1,4 +1,4 @@
-#PublicationContent {
+#PhotoContent {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -6,12 +6,12 @@
     justify-content: space-around;
 }
 
-#PublicationContent > a {
+#PhotoContent > a {
     display: block;
     flex: 0 0 auto;
 }
 
-#PublicationContent > a > .publication-img {
+#PhotoContent > a > .photo-img {
     margin: 10px;
     transition: filter 0.2s;
     filter: blur(2px);
@@ -24,12 +24,12 @@
     min-width: 300px;
 }
 
-#PublicationContent > a > .publication-img:hover {
+#PhotoContent > a > .photo-img:hover {
     filter: blur(0px);
 }
 
 @media (max-width: 725px) {
-    #PublicationContent > a > .publication-img {
+    #PhotoContent > a > .photo-img {
         width: 70vmin;
         height: 70vmin;
     }
