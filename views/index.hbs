@@ -11,15 +11,31 @@
 </slideshow>
 
 <div class="page-heading">
-    <!-- <div class="thicc">SMOKE... and THUNDER!!</div> -->
     <div>
     <span class="tabbed">Over</span> 100 years ago, an era donnen upon Skule™. One measured in the craft, dedication and protection of something mighty. A might not in size, but in the sound of its Spirit. Ye Olde Mighty Skule Cannon still holds the honourable position of the mascot of the University of Toronto Engineering community to this very day, protected fearlessly by the Cannon Guard. From its original incarnation which now rests outside Hart House to its resurrection in 2013, the Cannon has been a pillar of Skule™ and proven at countless events across campus and Toronto as our loudest and proudest ambassador.
     <br/><br/>
 Just one firing, and it’s clear:
     <br/><br/>
 <em>We are, we are, we are, we are, we are the Engineers!</em>
-    
     </div>
 </div>
+<canvas id="smoke-canvas"></canvas>
     
 <script src="./Scripts/Slideshow.js"></script>
+<script src="./Scripts/smoke.js"></script>
+<script>
+	var canvas = document.getElementById('smoke-canvas');
+	var ctx = canvas.getContext('2d');
+    // todo: position: absolute?
+	canvas.width = innerWidth;
+	canvas.height = innerHeight;
+
+	var party = smokemachine(ctx, [220, 220, 220]);
+	party.start(); // start animating
+
+	setInterval(function(){
+        // positioned randomly in the x direction and between 80-100% of the way down the page
+		party.addsmoke(Math.random() * innerWidth, (Math.random() / 5 + 0.8) * innerHeight, 1)
+	}, 200);
+</script>
+
