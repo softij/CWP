@@ -37,7 +37,7 @@ var smokemachine = function (context, color){
         this.startvy = -(Math.random()*20+5)/100
         this.vy = this.startvy
         this.scale = Math.random()*.5
-        this.lifetime = Math.random()*l+l/2
+        this.lifetime = Math.random()*l+l
         this.finalscale = 5+this.scale+Math.random()
 
         this.update = function(deltatime){

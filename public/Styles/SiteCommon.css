@@ -74,6 +74,7 @@ html, body {
 body, .layout-body-content {
     background-color: #111;
     position: relative;
+    z-index: -1000;
 }
 
 /**
@@ -284,11 +285,12 @@ figcaption {
 }
 
 #smoke-canvas {
-    opacity: 0.6;
+    opacity: 0.8;
     position: absolute;
     height: 100%;
     width: 100%;
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: -999;
 }
