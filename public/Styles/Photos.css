@@ -37,18 +37,18 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: 35%;
+    padding-top: 45%;
     padding-left: 10%;
     padding-right: 10%;
     /* photo blur filters requires manual fix for sizing this overlay*/
     margin: -6px;
-    height: calc(65% + 14px);
+    height: calc(55% + 14px);
     width: calc(80% + 14px);
 
     text-align: center;
     text-decoration: none;
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: Georgia;
 
     background-color: rgba(0,0,0,0.4);
