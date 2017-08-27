@@ -8,7 +8,7 @@
 <script src="./Scripts/dflip.js"></script>
 <script>
     $(document).ready(function() {
-        var bookHeight = innerHeight - $(".header").height() - $(".navbar").height();
+        var bookHeight = Math.max(innerHeight - $(".header").height() - $(".navbar").height(), 600); // at least 600 px
         var options = {
             height: bookHeight,
             backgroundColor: "none",
