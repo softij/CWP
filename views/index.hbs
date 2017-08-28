@@ -31,14 +31,14 @@ Just one firing, and it’s clear:
 	canvas.height = innerHeight;
 
 	var party = smokemachine(ctx, [240, 240, 240]);
-    for (var i = 0; i < 30; i++) {
+	for (var i = 0; i < innerWidth/50; i++) {
 		party.addsmoke(Math.random() * innerWidth, (Math.random() / 5 + 0.8) * innerHeight, 1);
-    }
+	}
 	party.start(); // start animating
 
 	setInterval(function(){
-        // positioned randomly in the x direction and between 80-100% of the way down the page
-		party.addsmoke(Math.random() * innerWidth, (Math.random() / 5 + 0.8) * innerHeight, 1);
-	}, 200);
+        // positioned randomly in the x direction and between 70-120% of the way down the page
+		party.addsmoke(Math.random() * innerWidth, (Math.random() / 2 + 0.7) * innerHeight, 2);
+	}, 100);
 </script>
 

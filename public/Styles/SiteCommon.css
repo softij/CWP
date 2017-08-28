@@ -285,7 +285,7 @@ figcaption {
 }
 
 #smoke-canvas {
-    opacity: 0.8;
+    opacity: 1;
     position: absolute;
     height: 100%;
     width: 100%;
