@@ -1,3 +1,22 @@
 <link href="/Styles/History.css" rel="stylesheet" />
+<link href="/Styles/dflip.css" rel="stylesheet" />
+<link href="/Styles/themify-icons.css" rel="stylesheet" />
 
-<iframe style="overflow: hidden" id="history-book" src="/history/history_book"></iframe>
+<!-- <iframe style="overflow: hidden" id="history-book" src="/history/history_book"></iframe> -->
+<div id="bookContainer"></div>
+
+<script src="./Scripts/dflip.js"></script>
+<script>
+    $(document).ready(function() {
+        var bookHeight = Math.max(innerHeight - $(".header").height() - $(".navbar").height(), 600); // at least 600 px
+        var options = {
+            height: bookHeight,
+            webgl: false,
+            backgroundColor: "none",
+            duration: 300,
+            hard: "cover"
+        };
+        var pdfPath = "./History.pdf";
+        var book = $("#bookContainer").flipBook(pdfPath, options);
+    });
+</script>

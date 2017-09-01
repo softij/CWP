@@ -1,0 +1,70 @@
+#PhotoContent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 20px 5vw;
+    justify-content: space-around;
+}
+
+#PhotoContent > a {
+    display: block;
+    flex: 0 0 auto;
+}
+
+.photo {
+    position: relative;
+    margin: 10px 30px;
+}
+
+.photo .photo-img {
+    margin: 0;
+    transition: filter 0.3s;
+    filter: blur(3px) grayscale(1);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 40vmin;
+    height: 40vmin;
+    min-height: 300px;
+    min-width: 300px;
+}
+
+.photo:hover .photo-img {
+    filter: blur(0px);
+}
+
+.photo .photo-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 45%;
+    padding-left: 10%;
+    padding-right: 10%;
+    /* photo blur filters requires manual fix for sizing this overlay*/
+    margin: -6px;
+    height: calc(55% + 14px);
+    width: calc(80% + 14px);
+
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-family: Georgia;
+
+    background-color: rgba(0,0,0,0.4);
+    transition: opacity 0.2s;
+    opacity: 1;
+}
+
+.photo:hover .photo-caption {
+    opacity: 0;
+}
+
+
+
+@media (max-width: 1060px) {
+    #PhotoContent > a > .photo-img {
+        width: 70vmin;
+        height: 70vmin;
+    }
+}

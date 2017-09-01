@@ -4,7 +4,7 @@ const router = new Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('faq', {title:"Frequently Asked Questions"});
+  res.render('publications', {title:"Publications and Media"});
 });
 
 module.exports = router;
