@@ -1,5 +1,6 @@
-var feeds = document.getElementsByClassName("feed");
-var request = 0;
+var feed = document.getElementById("feed");
+var count = 0;
+var done = 0;
 var timeOptions = {
     weekday: "short",
     year: "numeric",
@@ -8,8 +9,8 @@ var timeOptions = {
     hour: "2-digit",
     minute: "2-digit"
 };
-for (var i=0; i < feeds.length; i++) {
-    var url = "http://skule.ca/digest/api.php/user/" + feeds[i].getAttribute("uid");;
+function getPosts(count) {
+    var url = "http://skule.ca/digest/api.php/user/" + feed.getAttribute("uid") + "/" + count;
     var data;
     fetch(url).then(function(response) {
         return response.json();
@@ -17,8 +18,8 @@ for (var i=0; i < feeds.length; i++) {
     }).then((json) => {
         data = json;
         //console.log(data);
-        for (var j=0; j < Math.min(data.length, feeds[request].getAttribute("num")); j++) {
-            console.log(data[j]);
+        if (data.length < 20) done = 1;
+        for (var j=0; j < data.length; j++) {
             var embed = data[j].type === "pv" ? data[j].is_video === "1" ?
                 `<div class="post-image">
                     <iframe class="youtube" src="` + data[j].url + `"></iframe>
@@ -56,8 +57,11 @@ for (var i=0; i < feeds.length; i++) {
                     </div>
                 </div>
             `;
-            feeds[request].insertAdjacentHTML('beforeend', str);
+            feed.insertAdjacentHTML('beforeend', str);
         }
-        request++;
     });
 }
+getPosts(count);
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() > $(document).height() - 100 && !done) getPosts(count);
+});
