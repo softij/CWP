@@ -50,8 +50,7 @@ for (var i=0; i < feeds.length; i++) {
                         <div class="content">
                             ` + body + `
                             <div class="post-footer">
-                                <small>` + timestamp.toLocaleTimeString("en-us", timeOptions) + `</small><br>
-                                <a class="button is-light" href="http://digest.skule.ca/p/` + data[j].pid + `">View Full Post</a>
+                                <small>` + timestamp.toLocaleTimeString("en-us", timeOptions) + `</small>
                             </div>
                         </div>
                     </div>
