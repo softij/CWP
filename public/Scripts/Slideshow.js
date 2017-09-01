@@ -6,6 +6,16 @@ const IMAGE_PATH = "/Images/slideshow/{0}.jpg";
 
 const NUM_IMAGES = 7;
 
+const SLIDE_TIME = 2000;
+
+var nextSlideDate;
+
+function resetSlideDate() {
+    nextSlideDate = Date.now() + SLIDE_TIME;
+}
+
+resetSlideDate();
+
 (function() {
 
     var slideshowDiv = $('#photo-slideshow')[0];
@@ -45,12 +55,15 @@ const NUM_IMAGES = 7;
 
             }
 
-            if (direction === "right" && index < maxIndex) {
+            if (direction === "right") {
 
                 $(".slideshow-image[data-slideshow-index='" + index + "'")
                         .addClass('hidden');
                 
-                index++;
+                if (index < maxIndex)
+                    index++;
+                else
+                    index = 0;
 
                 $(".slideshow-image[data-slideshow-index='" + index + "'")
                         .removeClass('hidden');
@@ -62,12 +75,25 @@ const NUM_IMAGES = 7;
     })();
 
     // Create click listeners
-    $('.slideshow-button#left').click(function(){scroll('left')});
-    $('.slideshow-button#right').click(function(){scroll('right')});
+    $('.slideshow-button#left').click(function(){
+        scroll('left');
+        resetSlideDate();
+    });
+    $('.slideshow-button#right').click(function(){
+        scroll('right');
+        resetSlideDate();
+    });
 
 
     // View first slide.
     $('#photo-slideshow').children().first().removeClass('hidden');
+
+    setInterval(function(){
+        if (Date.now() > nextSlideDate) {
+            scroll('right');
+            nextSlideDate = Date.now() + SLIDE_TIME;
+        }
+    }, SLIDE_TIME/2);
 
 })();
 
