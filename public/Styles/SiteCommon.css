@@ -188,6 +188,7 @@ body, .layout-body-content {
 slideshow {
     margin: 20px auto;
     display: table;
+    height: 500px;
 }
 .slideshow-button-text {
     min-width: 15px;
