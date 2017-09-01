@@ -2,11 +2,19 @@
  * Create a slideshow
  * TODO make this non-static/configurable
  */
-const IMAGE_URLS = [
-        'https://photos.smugmug.com/1T61T7/Frosh-Week-1T6/Day-1/Matriculation/i-JDSxNRb/0/62924396/X2/IMG_0803-X2.jpg',
-        'https://photos.smugmug.com/1T61T7/Other-Events/Last-Suds/i-b2nsKdv/0/ed15dbe2/X2/IMG_7023.edit-X2.jpg',
-        'https://photos.smugmug.com/1T61T7/Godiva-Week/Godivas-Resurection-/i-BfNcZms/0/60022f5d/X2/IMG_0013-X2.jpg'
-];
+const IMAGE_PATH = "/Images/slideshow/{0}.jpg";
+
+const NUM_IMAGES = 7;
+
+const SLIDE_TIME = 2000;
+
+var nextSlideDate;
+
+function resetSlideDate() {
+    nextSlideDate = Date.now() + SLIDE_TIME;
+}
+
+resetSlideDate();
 
 (function() {
 
@@ -15,9 +23,9 @@ const IMAGE_URLS = [
     if (typeof slideshowDiv === "undefined")
         return;
 
-    for (var i = 0; i < IMAGE_URLS.length; i++) {
+    for (var i = 0; i < NUM_IMAGES; i++) {
         
-        var url = IMAGE_URLS[i];
+        var url = IMAGE_PATH.replace('{0}', i);
 
         $(slideshowDiv).append($(CreateSlide(i, url)));
     }
@@ -47,12 +55,15 @@ const IMAGE_URLS = [
 
             }
 
-            if (direction === "right" && index < maxIndex) {
+            if (direction === "right") {
 
                 $(".slideshow-image[data-slideshow-index='" + index + "'")
                         .addClass('hidden');
                 
-                index++;
+                if (index < maxIndex)
+                    index++;
+                else
+                    index = 0;
 
                 $(".slideshow-image[data-slideshow-index='" + index + "'")
                         .removeClass('hidden');
@@ -64,12 +75,25 @@ const IMAGE_URLS = [
     })();
 
     // Create click listeners
-    $('.slideshow-button#left').click(function(){scroll('left')});
-    $('.slideshow-button#right').click(function(){scroll('right')});
+    $('.slideshow-button#left').click(function(){
+        scroll('left');
+        resetSlideDate();
+    });
+    $('.slideshow-button#right').click(function(){
+        scroll('right');
+        resetSlideDate();
+    });
 
 
     // View first slide.
     $('#photo-slideshow').children().first().removeClass('hidden');
+
+    setInterval(function(){
+        if (Date.now() > nextSlideDate) {
+            scroll('right');
+            nextSlideDate = Date.now() + SLIDE_TIME;
+        }
+    }, SLIDE_TIME/2);
 
 })();
 
