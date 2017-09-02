@@ -1,6 +1,6 @@
 const Router = require('express-promise-router');
 
-const recaptchaSecret = "6Lc-9y4UAAAAAMl4brGKPni2BBwgh5_5R49Vqhjm";
+const recaptchaSecret = "6Lc-9y4UAAAAAMI4brGKPni2BBwgh5_5R49Vqhjm";
 const https = require("https");
 const querystring = require("querystring");
 
