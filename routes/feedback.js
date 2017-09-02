@@ -41,8 +41,8 @@ router.post('/', async function(req, res) {
       }
     };
 
-    var captcha_req = https.request(recaptchaOptions, function(res) {
-        res.on("data", function(data) {
+    var captcha_req = https.request(recaptchaOptions, function(gres) {
+        gres.on("data", function(data) {
             console.log("Got data: " + data);
             var json = JSON.parse(data);
             if (json.success === true) {
