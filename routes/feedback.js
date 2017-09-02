@@ -68,6 +68,7 @@ router.post('/', async function(req, res) {
             }
         });
     });
+    console.log("Sending " + JSON.stringify(recaptchaData));
     req.write(JSON.stringify(recaptchaData));
     req.end();
 });
