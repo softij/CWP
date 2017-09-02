@@ -18,10 +18,16 @@ Just one firing, and it’s clear:
     <br/><br/>
 <em>We are, we are, we are, we are, we are the Engineers!</em>
     </div>
+
+    <div>
+        <h1>Announcements from Chief Attiliator</h1>
+    </div>
+    <div id="feed" uid="1"></div>
 </div>
 <canvas id="smoke-canvas"></canvas>
-    
+
 <script src="./Scripts/Slideshow.js"></script>
+<script src="./Scripts/Feed.js"></script>
 <script src="./Scripts/smoke.js"></script>
 <script>
 	var canvas = document.getElementById('smoke-canvas');
@@ -41,4 +47,3 @@ Just one firing, and it’s clear:
 		party.addsmoke(Math.random() * innerWidth, (Math.random() / 2 + 0.7) * innerHeight, 2);
 	}, 100);
 </script>
-
