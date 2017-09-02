@@ -6,7 +6,8 @@ const recaptchaOptions = {
   hostname: "www.google.com",
   port: 443,
   path: "/recaptcha/api/siteverify",
-  method: "POST"
+  method: "POST",
+  headers: { "Content-Type": "application/json"}
 };
 
 const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
