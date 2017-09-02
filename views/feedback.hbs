@@ -1,6 +1,12 @@
 <link rel="stylesheet" href="./Styles/Feedback.css"/>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script type="text/javascript">
+    function onSubmit(token) {
+        document.getElementById("feedback-form").submit();
+    }
+</script>
 <div id="feedback-buffer">
-    <form class="feedback-section" method="post">
+    <form id="feedback-form" class="feedback-section" method="post">
         <label for="contactName">
             Name (optional) <br>
         </label>
@@ -12,7 +18,8 @@
         <input class="fullwidth" type="email" name="contactEmail" placeholder="example@skule.ca"/>
         <label for="feedbackText"> Message </label>
         <textarea class="fullwidth" type="text" name="feedbackText"></textarea>
-        <input id="submit-button" type="submit" value="Send" />
+        <button id="submit-button" class="g-recaptcha" data-sitekey="6Lc-9y4UAAAAAHLA_4OiaEqE8kFYaAG2DZFK3JqI" data-callback="onSubmit">Send</button>
+        <!-- <input id="submit-button" type="submit" value="Send" /> -->
     </form>
 </div>
 
