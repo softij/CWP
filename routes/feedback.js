@@ -2,13 +2,7 @@ const Router = require('express-promise-router');
 
 const recaptchaSecret = "6Lc-9y4UAAAAAMl4brGKPni2BBwgh5_5R49Vqhjm";
 const https = require("https");
-const recaptchaOptions = {
-  hostname: "www.google.com",
-  port: 443,
-  path: "/recaptcha/api/siteverify",
-  method: "POST",
-  headers: { "Content-Type": "application/json"}
-};
+const querystring = require("querystring");
 
 const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 const sg_helper = require('sendgrid').mail;
@@ -35,7 +29,17 @@ router.post('/', async function(req, res) {
         response: req.body["g-recaptcha-response"],
         remoteip: req.ip
     };
-        
+    var post_data = querystring.stringify(recaptchaData);
+    const recaptchaOptions = {
+      hostname: "www.google.com",
+      port: '443',
+      path: "/recaptcha/api/siteverify",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Length": Buffer.byteLength(post_data)
+      }
+    };
 
     var req = https.request(recaptchaOptions, function(res) {
         res.on("data", function(data) {
@@ -69,8 +73,8 @@ router.post('/', async function(req, res) {
             }
         });
     });
-    console.log("Sending " + JSON.stringify(recaptchaData));
-    req.write(JSON.stringify(recaptchaData));
+    console.log("Sending " + post_data);
+    req.write(post_data);
     req.end();
 });
 
