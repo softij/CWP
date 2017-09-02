@@ -68,7 +68,7 @@ router.post('/', async function(req, res) {
             }
         });
     });
-    req.write(recaptchaData);
+    req.write(JSON.stringify(recaptchaData));
     req.end();
 });
 
