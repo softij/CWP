@@ -22,8 +22,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', async function(req, res) {
-    console.log("Req.Body: %j", req.body);
-
     var recaptchaData = {
         secret: recaptchaSecret,
         response: req.body["g-recaptcha-response"],
@@ -43,7 +41,6 @@ router.post('/', async function(req, res) {
 
     var captcha_req = https.request(recaptchaOptions, function(gres) {
         gres.on("data", function(data) {
-            console.log("Got data: " + data);
             var json = JSON.parse(data);
             if (json.success === true) {
               feedback_db.AddFeedback(
@@ -73,7 +70,6 @@ router.post('/', async function(req, res) {
             }
         });
     });
-    console.log("Sending " + post_data);
     captcha_req.write(post_data);
     captcha_req.end();
 });
