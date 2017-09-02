@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', async function(req, res) {
-    console.log("Req.Body: " + req.body);
+    console.log("Req.Body: %j", req.body);
 
     var recaptchaData = {
         secret: recaptchaSecret,
