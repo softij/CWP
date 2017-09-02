@@ -41,7 +41,7 @@ router.post('/', async function(req, res) {
       }
     };
 
-    var req = https.request(recaptchaOptions, function(res) {
+    var captcha_req = https.request(recaptchaOptions, function(res) {
         res.on("data", function(data) {
             console.log("Got data: " + data);
             var json = JSON.parse(data);
@@ -74,8 +74,8 @@ router.post('/', async function(req, res) {
         });
     });
     console.log("Sending " + post_data);
-    req.write(post_data);
-    req.end();
+    captcha_req.write(post_data);
+    captcha_req.end();
 });
 
 module.exports = router;
