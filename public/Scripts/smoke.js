@@ -111,10 +111,15 @@ var smokemachine = function (context, color){
         running = false
     }
 
+    function clearparticles() {
+        currentparticles = [];
+    }
+
     return {
         start:start,
         stop:stop,
         step: updateanddrawparticles,
+        clearsmoke: clearparticles,
         addsmoke: addparticles
     }
 

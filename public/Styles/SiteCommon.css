@@ -152,12 +152,12 @@ body, .layout-body-content {
  */
 #photo-slideshow {
     max-width: 75vw;
-    max-height: 500px;
+    max-height: 40vh;
 }
 
 #photo-slideshow > img {
-    max-width: inherit;
-    max-height: inherit;
+    max-width: 75vw;
+    max-height: 40vh;
 }
 
 .slideshow-button {
@@ -188,7 +188,6 @@ body, .layout-body-content {
 slideshow {
     margin: 20px auto;
     display: table;
-    height: 500px;
 }
 .slideshow-button-text {
     min-width: 15px;
