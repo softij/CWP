@@ -102,7 +102,13 @@ body, .layout-body-content {
 
 }
 
+/*
 .navbar-item:last-child {
+    border-right: none !important;
+    border-radius: 0px 0px 10px 0px;
+}
+*/
+.navbar-item:nth-last-child(2) {
     border-right: none !important;
     border-radius: 0px 0px 10px 0px;
 }
