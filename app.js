@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var crusade = require('./routes/crusade');
 var users = require('./routes/users');
 var history = require('./routes/history');
 var feedback = require('./routes/feedback');
@@ -36,6 +37,7 @@ app.use('/history', history);
 app.use('/photos', photos);
 app.use('/publications', publications);
 app.use('/faq', faq);
+app.use('/crusade', crusade);
 if (process.env.DEBUG) {
   app.use('/feedback_responses', feedbackResponses);
 }
