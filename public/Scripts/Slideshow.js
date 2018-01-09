@@ -4,7 +4,7 @@
  */
 const IMAGE_PATH = "/Images/slideshow/{0}.jpg";
 
-const NUM_IMAGES = 7;
+const NUM_IMAGES = 8;
 
 const SLIDE_TIME = 2000;
 
