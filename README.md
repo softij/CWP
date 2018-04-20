@@ -27,3 +27,10 @@ app.use('/path/to/new/route', newroute);
 
 ### Views/
 Location for templated HTML.  Current templating enginge is HandlebarsJS.
+
+## Publishing changes to the Web
+0. You might have to install the heroku command-line client. Follow the instructions on their website to do this.
+1. Commit all your changes using `git add` and `git commit` commands.
+2. `git push origin master`. This will publish changes to github but **not to the public web**.
+3. `git push heroku master`. Note: you will have to be given permissions by Chief to push the site.
+4. Wait for the command to finish, and double-check everything still works and looks as expected.
